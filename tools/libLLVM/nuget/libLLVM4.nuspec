@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>libLLVM4</id>
-    <version>4.0.1</version>
+    <version>4.0.1.2</version>
     <authors>LLVM, Christian Scheuer</authors>
     <description>OSX native library for libLLVM v4.</description>
 
