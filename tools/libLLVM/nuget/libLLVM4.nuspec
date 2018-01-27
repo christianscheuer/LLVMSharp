@@ -1,13 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
-    <id>Libuv</id>
-    <version>5.0.0</version>
-    <authors>LLVM</authors>
-    <owners>LLVM</owners>
-    <licenseUrl>http://releases.llvm.org/5.0.0/LICENSE.TXT</licenseUrl>
+    <id>libLLVM4</id>
+    <version>4.0.1</version>
+    <authors>LLVM, Christian Scheuer</authors>
+    <description>OSX native library for libLLVM v4.</description>
+
+    <licenseUrl>http://releases.llvm.org/4.0.1/LICENSE.TXT</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Multi-platform native library for libLLVM.</description>
     <tags>llvm clang libLLVM libclang clangsharp llvmsharp ast c++ c roslyn compilers clang.net llvm.net bindings pinvoke parsers</tags>
     <serviceable>true</serviceable>
     <dependencies>

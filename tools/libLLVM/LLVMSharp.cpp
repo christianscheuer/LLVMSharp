@@ -1,5 +1,10 @@
 #include "llvm-c/Target.h"
 
+int main()
+{
+    return 0;
+}
+
 extern "C"
 {
     void LLVMInitializeAllTargetInfos_()
