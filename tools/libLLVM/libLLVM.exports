@@ -361,7 +361,6 @@ _LLVMGetNextUse
 _LLVMGetNormalDest
 _LLVMGetNumArgOperands
 _LLVMGetNumClauses
-_LLVMGetNumContainedTypes
 _LLVMGetNumIndices
 _LLVMGetNumOperands
 _LLVMGetNumSuccessors
@@ -386,7 +385,6 @@ _LLVMGetStringAttributeKind
 _LLVMGetStringAttributeValue
 _LLVMGetStructElementTypes
 _LLVMGetStructName
-_LLVMGetSubtypes
 _LLVMGetSuccessor
 _LLVMGetSwitchDefaultDest
 _LLVMGetTarget
@@ -536,7 +534,6 @@ _LLVMMDNode
 _LLVMMDNodeInContext
 _LLVMMDString
 _LLVMMDStringInContext
-_LLVMMetadataAsValue
 _LLVMModuleCreateWithName
 _LLVMModuleCreateWithNameInContext
 _LLVMMoveBasicBlockAfter
@@ -609,7 +606,6 @@ _LLVMStructTypeInContext
 _LLVMTypeIsSized
 _LLVMTypeOf
 _LLVMValueAsBasicBlock
-_LLVMValueAsMetadata
 _LLVMValueIsBasicBlock
 _LLVMVectorType
 _LLVMVoidType
@@ -749,13 +745,9 @@ _LLVMOrcCreateInstance
 _LLVMOrcCreateLazyCompileCallback
 _LLVMOrcDisposeInstance
 _LLVMOrcDisposeMangledSymbol
-_LLVMOrcDisposeSharedModuleRef
-_LLVMOrcDisposeSharedObjectBufferRef
 _LLVMOrcGetErrorMsg
 _LLVMOrcGetMangledSymbol
 _LLVMOrcGetSymbolAddress
-_LLVMOrcMakeSharedModule
-_LLVMOrcMakeSharedObjectBuffer
 _LLVMOrcRemoveModule
 _LLVMOrcSetIndirectStubPointer
 _LLVMLinkInOrcMCJITReplacement
@@ -781,7 +773,6 @@ _LLVMAddIndVarSimplifyPass
 _LLVMAddInstructionCombiningPass
 _LLVMAddJumpThreadingPass
 _LLVMAddLICMPass
-_LLVMAddLateCFGSimplificationPass
 _LLVMAddLoopDeletionPass
 _LLVMAddLoopIdiomPass
 _LLVMAddLoopRerollPass
