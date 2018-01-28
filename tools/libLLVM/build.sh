@@ -1,8 +1,20 @@
 
-__libs="-lLLVMAArch64AsmParser -lLLVMAArch64AsmPrinter -lLLVMAArch64CodeGen -lLLVMAArch64Desc -lLLVMAArch64Disassembler -lLLVMAArch64Info -lLLVMAArch64Utils -lLLVMAMDGPUAsmParser -lLLVMAMDGPUAsmPrinter -lLLVMAMDGPUCodeGen -lLLVMAMDGPUDesc -lLLVMAMDGPUDisassembler -lLLVMAMDGPUInfo -lLLVMAMDGPUUtils -lLLVMAnalysis -lLLVMARMAsmParser -lLLVMARMAsmPrinter -lLLVMARMCodeGen -lLLVMARMDesc -lLLVMARMDisassembler -lLLVMARMInfo -lLLVMAsmParser -lLLVMAsmPrinter -lLLVMBitReader -lLLVMBitWriter -lLLVMBPFAsmPrinter -lLLVMBPFCodeGen -lLLVMBPFDesc -lLLVMBPFDisassembler -lLLVMBPFInfo -lLLVMCodeGen -lLLVMCore -lLLVMCoroutines -lLLVMCoverage -lLLVMDebugInfoCodeView -lLLVMDebugInfoDWARF -lLLVMDebugInfoMSF -lLLVMDebugInfoPDB -lLLVMDemangle -lLLVMExecutionEngine -lLLVMGlobalISel -lLLVMHexagonAsmParser -lLLVMHexagonCodeGen -lLLVMHexagonDesc -lLLVMHexagonDisassembler -lLLVMHexagonInfo -lLLVMInstCombine -lLLVMInstrumentation -lLLVMInterpreter -lLLVMipo -lLLVMIRReader -lLLVMLanaiAsmParser -lLLVMLanaiCodeGen -lLLVMLanaiDesc -lLLVMLanaiDisassembler -lLLVMLanaiInfo -lLLVMLanaiInstPrinter -lLLVMLibDriver -lLLVMLineEditor -lLLVMLinker -lLLVMLTO -lLLVMMC -lLLVMMCDisassembler -lLLVMMCJIT -lLLVMMCParser -lLLVMMipsAsmParser -lLLVMMipsAsmPrinter -lLLVMMipsCodeGen -lLLVMMipsDesc -lLLVMMipsDisassembler -lLLVMMipsInfo -lLLVMMIRParser -lLLVMMSP430AsmPrinter -lLLVMMSP430CodeGen -lLLVMMSP430Desc -lLLVMMSP430Info -lLLVMNVPTXAsmPrinter -lLLVMNVPTXCodeGen -lLLVMNVPTXDesc -lLLVMNVPTXInfo -lLLVMObjCARCOpts -lLLVMObject -lLLVMObjectYAML -lLLVMOption -lLLVMOrcJIT -lLLVMPasses -lLLVMPowerPCAsmParser -lLLVMPowerPCAsmPrinter -lLLVMPowerPCCodeGen -lLLVMPowerPCDesc -lLLVMPowerPCDisassembler -lLLVMPowerPCInfo -lLLVMProfileData -lLLVMRISCVCodeGen -lLLVMRISCVDesc -lLLVMRISCVInfo -lLLVMRuntimeDyld -lLLVMScalarOpts -lLLVMSelectionDAG -lLLVMSparcAsmParser -lLLVMSparcAsmPrinter -lLLVMSparcCodeGen -lLLVMSparcDesc -lLLVMSparcDisassembler -lLLVMSparcInfo -lLLVMSupport -lLLVMSymbolize -lLLVMSystemZAsmParser -lLLVMSystemZAsmPrinter -lLLVMSystemZCodeGen -lLLVMSystemZDesc -lLLVMSystemZDisassembler -lLLVMSystemZInfo -lLLVMTableGen -lLLVMTarget -lLLVMTransformUtils -lLLVMVectorize -lLLVMX86AsmParser -lLLVMX86AsmPrinter -lLLVMX86CodeGen -lLLVMX86Desc -lLLVMX86Disassembler -lLLVMX86Info -lLLVMX86Utils -lLLVMXCoreAsmPrinter -lLLVMXCoreCodeGen -lLLVMXCoreDesc -lLLVMXCoreDisassembler -lLLVMXCoreInfo -lLLVMXRay"
+export OSName=$(uname -s)
+case $OSName in
+    Darwin)
+        brew install llvm@4
+        cp /usr/local/Cellar/llvm@4/4.0.1/lib/libLLVM.dylib nuget/runtimes/osx-x64/native/libLLVM.dylib
+        ;;
 
-clang LLVMSharp.cpp -dynamiclib -exported_symbols_list libLLVM.exports -o libLLVM.dylib -I/usr/local/Cellar/llvm@4/4.0.1/include -L/usr/local/Cellar/llvm@4/4.0.1/lib -L/usr/local/Cellar/zlib/1.2.11/lib $__libs -lc++ -lc++abi -lz -lncurses -lSystem -lffi
+    Linux)
+        wget -O llvm.deb http://apt.llvm.org/xenial/pool/main/l/llvm-toolchain-4.0/libllvm4.0_4.0~svn305264-1~exp1_amd64.deb
+	dpkg -x llvm.deb debtmp
+	cp debtmp/usr/lib/x86_64-linux-gnu/libLLVM-4.0.so nuget/runtimes/linux-x64/native/libLLVM.so        
+        ;;
 
-mkdir -p nuget/runtimes/osx-x64/native
-rm nuget/runtimes/osx-x64/native/libLLVM.dylib
-cp libLLVM.dylib nuget/runtimes/osx-x64/native/libLLVM.dylib
+    *)
+        echo "Unsupported OS $OSName detected"
+        exit 1
+        ;;
+esac
+
