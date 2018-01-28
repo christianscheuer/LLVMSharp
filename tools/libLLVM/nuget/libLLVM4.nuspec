@@ -2,9 +2,9 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>libLLVM4</id>
-    <version>4.0.1.4</version>
+    <version>4.0.1.5</version>
     <authors>LLVM, Christian Scheuer</authors>
-    <description>OSX native library for libLLVM v4.</description>
+    <description>Cross Platform native libraries for libLLVM v4.</description>
 
     <licenseUrl>http://releases.llvm.org/4.0.1/LICENSE.TXT</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
