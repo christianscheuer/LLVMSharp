@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>libLLVM4</id>
-    <version>4.0.1.5</version>
+    <version>4.0.1.6</version>
     <authors>LLVM, Christian Scheuer</authors>
     <description>Cross Platform native libraries for libLLVM v4.</description>
 
