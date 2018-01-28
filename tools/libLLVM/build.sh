@@ -3,6 +3,6 @@ __libs="-lLLVMAArch64AsmParser -lLLVMAArch64AsmPrinter -lLLVMAArch64CodeGen -lLL
 
 clang LLVMSharp.cpp -dynamiclib -exported_symbols_list libLLVM.exports -o libLLVM.dylib -I/usr/local/Cellar/llvm@4/4.0.1/include -L/usr/local/Cellar/llvm@4/4.0.1/lib -L/usr/local/Cellar/zlib/1.2.11/lib $__libs -lc++ -lc++abi -lz -lncurses -lSystem -lffi
 
-mkdir -p nuget/runtimes/osx/native
-rm nuget/runtimes/osx/native/libLLVM.dylib
-cp libLLVM.dylib nuget/runtimes/osx/native/libLLVM.dylib
+mkdir -p nuget/runtimes/osx-x64/native
+rm nuget/runtimes/osx-x64/native/libLLVM.dylib
+cp libLLVM.dylib nuget/runtimes/osx-x64/native/libLLVM.dylib
