@@ -1,2 +1,3 @@
-/libLLVM.dylib
-/libLLVM.so
+llvm.deb
+debtmp/
+
