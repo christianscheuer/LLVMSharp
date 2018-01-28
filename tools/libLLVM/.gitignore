@@ -1,1 +1,2 @@
-libLLVM.dylib
+/libLLVM.dylib
+/libLLVM.so
