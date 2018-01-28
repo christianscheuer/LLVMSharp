@@ -14,11 +14,12 @@ case $OSName in
         ;;
 
     Linux)
-        export __clang=clang++-4.0
+        export __clang=clang
         export __llvm_include=/usr/lib/llvm-4.0/include
         export __llvm_lib=/usr/lib/llvm-4.0/lib
         export __zlib_lib=/usr/lib
-        export __extra_args="-shared -fPIC -std=c++11 -lz"
+	export __rpath='$ORIGIN/../lib'
+	export __extra_args="-DLINUX -fPIC -shared -Wl,-soname,libLLVM-5.0.so -Wl,-rpath=$__rpath -pthread -ldl -std=c++11 -stdlib=libstdc++ -lstdc++ -lm -lgcc_s -lc"
         export __dir=nuget/runtimes/linux-x64/native
         export __file=libLLVM.so
         ;;
